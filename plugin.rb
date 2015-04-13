@@ -4,7 +4,7 @@
 # authors: Krzysztof Madejski, Erick Guan
 # url: https://github.com/kodujdlapolski/discourse-mojepanstwo-login
 
-gem 'omniauth-mojepanstwo-oauth2', :git => "https://github.com/kodujdlapolski/omniauth-mojepanstwo-oauth2"
+gem 'omniauth-mojepanstwo-oauth2'
 
 class MojepanstwoAuthenticator < ::Auth::Authenticator
 
