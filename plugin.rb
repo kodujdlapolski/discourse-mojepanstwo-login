@@ -61,8 +61,6 @@ auth_provider :frame_width => 920,
 register_css <<CSS
 
 .btn-social.mojepanstwo:before {
-  font-family: FontAwesome;
-  content: "\\f18a";
 }
 
 CSS
