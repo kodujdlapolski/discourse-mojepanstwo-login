@@ -2,14 +2,14 @@
 # about: Authenticate with discourse with weibo.
 # version: 0.3.1
 # authors: Erick Guan
-# url: https://github.com/fantasticfears/weibo-login
+# url: https://github.com/kodujdlapolski/discourse-mojepanstwo-login
 
-gem 'omniauth-weibo-oauth2', '0.4.0'
+gem 'omniauth-mojepanstwo-oauth2', :git => "https://github.com/kodujdlapolski/omniauth-mojepanstwo-oauth2"
 
-class WeiboAuthenticator < ::Auth::Authenticator
+class MojepanstwoAuthenticator < ::Auth::Authenticator
 
   def name
-    'weibo'
+    'mojepanstwo'
   end
 
   def after_authenticate(auth_token)
@@ -18,27 +18,31 @@ class WeiboAuthenticator < ::Auth::Authenticator
     data = auth_token[:info]
     email = auth_token[:extra][:email]
     raw_info = auth_token[:extra][:raw_info]
-    weibo_uid = auth_token[:uid]
+#	Trusing email, not using uid
+#    weibo_uid = auth_token[:uid]
 
-    current_info = ::PluginStore.get('weibo', "weibo_uid_#{weibo_uid}")
+#    current_info = ::PluginStore.get('mojepanstwo', "mojepanstwo_uid_#{weibo_uid}")
 
-    result.user =
-      if current_info
-        User.where(id: current_info[:user_id]).first
-      end
+#    result.user =
+#      if current_info
+#        User.where(id: current_info[:user_id]).first
+#      end
 
     result.name = data['name']
-    result.username = data['nickname']
+    #result.username = data['name']
     result.email = email
-    result.extra_data = { weibo_uid: weibo_uid, raw_info: raw_info }
+    result.extra_data = { 
+#	weibo_uid: weibo_uid, 
+	raw_info: raw_info 
+    }
 
     result
   end
 
-  def after_create_account(user, auth)
-    weibo_uid = auth[:extra_data][:uid]
-    ::PluginStore.set('weibo', "weibo_uid_#{weibo_uid}", {user_id: user.id})
-  end
+#  def after_create_account(user, auth)
+#    weibo_uid = auth[:extra_data][:uid]
+#    ::PluginStore.set('mojepanstwo', "weibo_uid_#{weibo_uid}", {user_id: user.id})
+#  end
 
   def register_middleware(omniauth)
     omniauth.provider :weibo, :setup => lambda { |env|
@@ -51,7 +55,7 @@ end
 
 auth_provider :frame_width => 920,
               :frame_height => 800,
-              :authenticator => WeiboAuthenticator.new,
+              :authenticator => MojepanstwoAuthenticator.new,
               :background_color => 'rgb(230, 22, 45)'
 
 register_css <<CSS
