@@ -3,6 +3,6 @@
 en:
   js:
     login:
-      weibo:
-        title: "with Weibo"
-        message: "Authenticating with Weibo (make sure pop up blockers are not enabled)"
+      mojepanstwo:
+        title: "with MojePanstwo"
+        message: "Authenticating with MojePanstwo.pl (make sure pop up blockers are not enabled)"

@@ -1,0 +1,6 @@
+# encoding: utf-8
+
+pl:
+  site_settings:
+    mojepanstwo_client_id: "ID aplikacji klienckiej w serwisie MojePanstwo, zarejstruj się na http://mojepanstwo.pl"
+    mojepanstwo_client_secret: "Klucz prywatny aplikacji klienckiej w serwisie mojePanstwo"

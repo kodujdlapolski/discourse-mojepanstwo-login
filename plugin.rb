@@ -1,7 +1,7 @@
-# name: Weibo login
-# about: Authenticate with discourse with weibo.
+# name: MojePanstwo login
+# about: Authenticate with discourse with MojePanstwo.pl.
 # version: 0.3.1
-# authors: Erick Guan
+# authors: Krzysztof Madejski, Erick Guan
 # url: https://github.com/kodujdlapolski/discourse-mojepanstwo-login
 
 gem 'omniauth-mojepanstwo-oauth2', :git => "https://github.com/kodujdlapolski/omniauth-mojepanstwo-oauth2"
@@ -45,10 +45,10 @@ class MojepanstwoAuthenticator < ::Auth::Authenticator
 #  end
 
   def register_middleware(omniauth)
-    omniauth.provider :weibo, :setup => lambda { |env|
+    omniauth.provider :mojepanstwo, :setup => lambda { |env|
       strategy = env['omniauth.strategy']
-      strategy.options[:client_id] = SiteSetting.weibo_client_id
-      strategy.options[:client_secret] = SiteSetting.weibo_client_secret
+      strategy.options[:client_id] = SiteSetting.mojepanstwo_client_id
+      strategy.options[:client_secret] = SiteSetting.mojepanstwo_client_secret
     }
   end
 end
@@ -60,7 +60,7 @@ auth_provider :frame_width => 920,
 
 register_css <<CSS
 
-.btn-social.weibo:before {
+.btn-social.mojepanstwo:before {
   font-family: FontAwesome;
   content: "\\f18a";
 }

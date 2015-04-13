@@ -2,5 +2,5 @@
 
 en:
   site_settings:
-    weibo_client_id: "Client id for Weibo authentication, registered at http://open.weibo.com/"
-    weibo_client_secret: "Client secret for Weibo authentication, registered at http://open.weibo.com/"
+    mojepanstwo_client_id: "Client id for MojePanstwo authentication, registered at http://mojepanstwo.pl"
+    mojepanstwo_client_secret: "Client secret for Weibo authentication, registered at http://mojepanstwo.pl"
