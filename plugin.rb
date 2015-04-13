@@ -20,7 +20,7 @@ end
 
 auth_provider :frame_width => 920,
               :frame_height => 800,
-              :authenticator => MojepanstwoAuthenticator.new('epanstwo', trusted: true),
+              :authenticator => MojepanstwoAuthenticator.new('mojepanstwo', trusted: true),
               :background_color => 'rgb(230, 22, 45)'
 
 register_css <<CSS

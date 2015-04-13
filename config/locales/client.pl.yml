@@ -1,8 +1,0 @@
-# encoding: utf-8
-
-pl:
-  js:
-    login:
-      mojepanstwo:
-        title: "Paszport Mojego Państwa"
-        message: "Zaloguj się paszportem serwisu MojePanstwo.pl (pozwól przeglądarce na otwarcie wyskakującego okienka)"
